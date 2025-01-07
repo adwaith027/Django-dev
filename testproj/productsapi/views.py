@@ -9,6 +9,8 @@ from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 from products.forms import ProductForm
 from rest_framework import status
+from products.models import product
+from .serializers import ProductSerializer
 
 # Create your views here.
 
@@ -52,3 +54,10 @@ def createProduct(request):
         product=form.save()
         return Response({'id':product.id},status=status.HTTP_201_CREATED)
     return Response(form.errors,status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+@permission_classes((AllowAny,))
+def listProduct(request):
+    products=product.objects.all()
+    serializer=ProductSerializer(products,many=True)
+    return Response(serializer.data)

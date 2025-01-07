@@ -6,5 +6,6 @@ urlpatterns=[
     path('simpleapi/',views.simpleapi,name='simpleapi'),
     path('signup/',views.signup,name='signup_api'),
     path('login/', views.login, name='login_api'),
-    path('createproduct/',views.createProduct,name='createProduct'),
+    path('createproduct/',views.createProduct,name='createProductapi'),
+    path('listproduct/',views.listProduct,name='listProductapi'),
 ]
