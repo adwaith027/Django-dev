@@ -1,0 +1,24 @@
+{% extends 'layout/mainlayout.html' %}
+{% block 'content' %}
+
+    <h1>Here are the users:</h1>
+    {% if user %}
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>Last Login</th>
+        </tr>
+    {% for users in user %}
+        <tr>
+            <td>{{users.id}}</td>
+            <td>{{users.username}}</td>
+            <td>{{users.last_login}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    {% else %}
+        <p>No registered users</p>
+    {% endif %}
+
+{% endblock %}

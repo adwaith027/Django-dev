@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        Username : {{ form.username }}<br><br>
+        Password : {{form.password1}}<br><br>
+        Confirm Password : {{form.password2}}<br><br>
+        <button type="submit">Submit</button><br><br>
+        <span>Already have an account? </span><button><a href="{% url 'ulogin' %}" style="text-decoration: none;color: black;">Sign In</a></button>
+    </form>
+</body>
+</html>

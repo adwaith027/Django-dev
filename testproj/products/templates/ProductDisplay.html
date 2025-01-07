@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Product</title>
+</head>
+<body>
+    <table border="1" style="border-collapse: collapse;">
+        {% if data %}
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Product Price</th>
+            <th>Action</th>
+        </tr>
+            {% for datas in data %}
+            <tr>
+                <td>{{datas.id}}</td>
+                <td>{{datas.ProductName}}</td>
+                <td>{{datas.ProductDescription}}</td>
+                <td>{{datas.ProductPrice}}</td>
+                <td><a href="{% url 'update' datas.id %}">Edit</a></td>
+                <td><a href="{% url 'delete' datas.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        {% else %}
+        <p>No Products were added!!!</p>
+        {% endif %}
+    </table>
+</body>
+</html>
