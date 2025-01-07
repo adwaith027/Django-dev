@@ -11,6 +11,7 @@ from products.forms import ProductForm
 from rest_framework import status
 from products.models import product
 from .serializers import ProductSerializer
+from django.shortcuts import get_object_or_404
 
 @csrf_exempt
 @api_view(["GET"])
@@ -59,3 +60,17 @@ def listProduct(request):
     products=product.objects.all()
     serializer=ProductSerializer(products,many=True)
     return Response(serializer.data)
+
+@api_view(['PUT'])
+@permission_classes((AllowAny,))
+def updateProduct(request, pk):
+    pdt=get_object_or_404(product,pk=pk)
+    form=ProductForm(request.data,instance=pdt)
+    if form.is_valid():
+        form.save()
+        serializer=ProductSerializer(product)
+        return Response(serializer.data)
+    else:
+        return Response(form.errors,status=status.HTTP_400_BAD_REQUEST)
+    
+    

@@ -8,4 +8,5 @@ urlpatterns=[
     path('login/', views.login, name='login_api'),
     path('createproduct/',views.createProduct,name='createProduct_api'),
     path('listproduct/',views.listProduct,name='listProduct_api'),
+    path('updateproduct/<int:pk>/', views.updateProduct, name='updateProduct_api'),
 ]
