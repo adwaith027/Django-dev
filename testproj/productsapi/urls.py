@@ -9,4 +9,6 @@ urlpatterns=[
     path('createproduct/',views.createProduct,name='createProduct_api'),
     path('listproduct/',views.listProduct,name='listProduct_api'),
     path('updateproduct/<int:pk>/', views.updateProduct, name='updateProduct_api'),
+    path('deleteproduct/<int:pk>/', views.deleteProduct, name='deleteProduct_api'),
+    path('createlog/',views.createwithlogin,name='createwithlogin'),
 ]
