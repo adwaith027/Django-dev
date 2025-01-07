@@ -12,8 +12,6 @@ from rest_framework import status
 from products.models import product
 from .serializers import ProductSerializer
 
-# Create your views here.
-
 @csrf_exempt
 @api_view(["GET"])
 @permission_classes((AllowAny,))
