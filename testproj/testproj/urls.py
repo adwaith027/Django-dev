@@ -27,4 +27,5 @@ urlpatterns = [
     path('listusers/',views.listUser,name='listUser'),
     path('products/',include('products.urls')),
     path('productsapi/',include('productsapi.urls')),
+    path('fileupload/', include('filemaker.urls')),
 ]
