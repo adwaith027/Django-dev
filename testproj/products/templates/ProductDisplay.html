@@ -23,6 +23,8 @@
                 <td>{{datas.ProductPrice}}</td>
                 <td><a href="{% url 'update' datas.id %}">Edit</a></td>
                 <td><a href="{% url 'delete' datas.id %}">Delete</a></td>
+                <td><a href="{% url 'getpdf' datas.id %}">Download Pdf</a></td>
+                <td><a href="{% url 'getmail' datas.id %}">Get Mail</a></td>
             </tr>
             {% endfor %}
         {% else %}
