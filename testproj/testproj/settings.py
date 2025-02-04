@@ -86,7 +86,7 @@ DATABASES = {
         'USER': 'root',#Enter your mysql username
         'PASSWORD': '',#Enter your mysql password
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '**',
     }
 }
 
@@ -146,6 +146,6 @@ REST_FRAMEWORK = {
 
 # Looking to send emails in production? Check out our Email API/SMTP product!
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = '0a3bb6c2c156d9'
-EMAIL_HOST_PASSWORD = 'b3129cd1a9d032'
-EMAIL_PORT = '2525'
+EMAIL_HOST_USER = '**'
+EMAIL_HOST_PASSWORD = '**'
+EMAIL_PORT = '**'
